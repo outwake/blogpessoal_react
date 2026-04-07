@@ -93,7 +93,7 @@ function Login() {
             </Link>
           </p>
       </form>
-      <div className="bg-[url('http://i.imgur.com/ZZFAmzo.jpg)] lg: block hidden bg-no-repeat
+      <div className="bg-[url('http://i.imgur.com/ZZFAmzo.jpg')] lg: block hidden bg-no-repeat
       w-full min-h-screen bg-cover bg-center">
 
       </div>
