@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type Tema from "../../../models/Tema";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { ClipLoader } from "react-spinners";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 
 function FormTema() {
@@ -51,7 +52,7 @@ function FormTema() {
      // Cria um useEffect para monitorar o token
     useEffect( () => {
         if(token === ''){
-            alert('Você precisa estar logado!');
+            ToastAlerta('Você precisa estar logado!', 'information');
             navigate('/')
         }
     }, [token])
@@ -86,14 +87,14 @@ function FormTema() {
                 headers: {Authorization:token}
              })
 
-             alert('Tema atualizado com sucesso!')
+             ToastAlerta('Tema atualizado com sucesso!', "sucesso")
 
 
         }catch(error: any){
         if (error.toString().includes('401')){
             handleLogout();
         }else{
-            alert('Erro ao Atualizar o Tema!')
+            ToastAlerta('Erro ao Atualizar o Tema!', "erro")
         }
       } 
     } else{
@@ -105,13 +106,13 @@ function FormTema() {
                     headers: { Authorization: token }
                 });
 
-                alert('Tema cadastrado com sucesso!')
+                ToastAlerta('Tema cadastrado com sucesso!', 'sucesso')
 
             }catch (error: any){
                 if(error.toString().includes('401')){
                     handleLogout();
                 }else{
-                    alert('Erro ao Cadastrar o Tema!');
+                    ToastAlerta('Erro ao Cadastrar o Tema!', 'erro');
                 }
             }
 
@@ -128,7 +129,7 @@ function FormTema() {
   return (
     <div className="container flex flex-col items-center justify-center mx-auto">
         <h1 className=" text-4xl text-center my-8">
-            Cadastrar Tema
+           {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
         </h1>
 
         <form className="w-1/2 flex flex-col gap-4"
