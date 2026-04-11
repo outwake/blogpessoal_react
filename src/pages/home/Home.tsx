@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import FormPostagem from "../../components/postagem/formpostagem/FormPostagem";
 import ListaPostagens from "../../components/postagem/listapostagens/ListaPostagens";
 
 function Home() {

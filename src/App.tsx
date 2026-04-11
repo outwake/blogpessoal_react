@@ -11,6 +11,10 @@ import DeletarTema from "./components/tema/deletartema/DeletarTema"
 import ListaPostagens from "./components/postagem/listapostagens/ListaPostagens"
 import DeletarPostagem from "./components/postagem/deletarpostagem/DeletarPostagem"
 import FormPostagem from "./components/postagem/formpostagem/FormPostagem"
+import Perfil from "./pages/perfil/Perfil"
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify"
+import EditarPerfil from "./components/perfil/editarperfil/EditarPerfil"
 
 
 
@@ -19,8 +23,9 @@ function App() {
   return (
     <>{/** Precisamos fazer uma div fantasma para agrupar os elementos filhos e não cria uma div na dom */}
     <AuthProvider>
-   <BrowserRouter> {/* Caminho de rota*/}
-   <Navbar/>
+      <ToastContainer/>
+      <BrowserRouter> {/* Caminho de rota*/}
+      <Navbar/>
   <div className="min-h-[80vh]">
   <Routes>{/**Quando o elemento tem rota */}
     <Route path="/" element= {<Login/>} />
@@ -35,6 +40,8 @@ function App() {
     <Route path="/deletarpostagem/:id" element={<DeletarPostagem />} />
     <Route path="/cadastrarpostagem" element={<FormPostagem />} />
 		<Route path="/editarpostagem/:id" element={<FormPostagem />} />
+    <Route path="/perfil" element={<Perfil />} />
+    <Route path="/editarperfil" element={<EditarPerfil />} />
   </Routes>
   </div>
    <Footer/>
