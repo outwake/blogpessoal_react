@@ -3,7 +3,7 @@ import axios from "axios";
 //Aqui é para colocar a URL do deploy para ter a conexão
 //Criando uma instancia do Axios, que é uma biblioteca para criar requisições http
 const api = axios.create({
-    baseURL: 'https://blogpessoal-oela.onrender.com'
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 //Funçao para cadastro Usuario
