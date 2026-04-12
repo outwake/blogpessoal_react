@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, ChangeEvent } from "react";
+import { useState, useContext, useEffect, type ChangeEvent} from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizarUsuario } from "../../../services/Service";
